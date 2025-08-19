@@ -147,6 +147,22 @@ public class DoubleLinkedList {
         node.prev = newNode;
     }
 
+    private static DLNode reverseDL(DLNode head){
+        if(head == null || head.next == null){
+            return head;
+        }
+        DLNode curr = head;
+        DLNode prev = null;
+        while(curr != null){
+            prev = curr.prev;
+            curr.prev = curr.next;
+            curr.next = prev;
+            curr = curr.prev;
+
+        }
+        return prev.prev;
+    }
+
     public static void main(String[] args) {
         int arr[] = { 1, 2, 3, 4, 5 };
         DLNode head = createDLNode(arr);
@@ -163,13 +179,16 @@ public class DoubleLinkedList {
         // printDLL(head);
 
         // Insertion of the Doubly Linked List
-        head = insertBeforeHead(head, 10);
-        printDLL(head);
-        head = insertBeforeTail(head, 20);
-        printDLL(head);
-        head = insertBeforeKthNode(head, 30, 3);
-        printDLL(head);
-        insertBeforeNode(head.next, 40);
+        // head = insertBeforeHead(head, 10);
+        // printDLL(head);
+        // head = insertBeforeTail(head, 20);
+        // printDLL(head);
+        // head = insertBeforeKthNode(head, 30, 3);
+        // printDLL(head);
+        // insertBeforeNode(head.next, 40);
+        // printDLL(head);
+
+        head = reverseDL(head);
         printDLL(head);
     }
 }
