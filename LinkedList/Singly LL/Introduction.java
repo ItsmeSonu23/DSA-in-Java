@@ -144,6 +144,25 @@ public class Introduction {
         return head;
     }
 
+    private static boolean detectLoop(Node head){
+        if(head==null || head.next==null){
+            return false;
+        }
+
+        Node slow = head;
+        Node fast = head;
+
+        while(fast!=null && fast.next!=null){
+            slow = slow.next;
+            fast = fast.next.next;
+            if(slow==fast){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public static void main(String[] args) {
 
         int[] arr = { 10, 20, 30, 40, 50 };
@@ -164,5 +183,6 @@ public class Introduction {
         printLL(y);
         y = insertKthNode(y, 300, 5);
         printLL(y);
+        System.out.println(detectLoop(y));
     }
 }

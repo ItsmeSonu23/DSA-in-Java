@@ -168,25 +168,25 @@ public class DoubleLinkedList {
         DLNode head = createDLNode(arr);
 
         // Deleteion of the Doubly Linked List
-        // printDLL(head);
-        // head = deleteHead(head);
-        // printDLL(head);
-        // head = deleteTail(head);
-        // printDLL(head);
-        // head = removeKthNode(head, 2);
-        // printDLL(head);
-        // deleteDlNode(head.next);
-        // printDLL(head);
+        printDLL(head);
+        head = deleteHead(head);
+        printDLL(head);
+        head = deleteTail(head);
+        printDLL(head);
+        head = removeKthNode(head, 2);
+        printDLL(head);
+        deleteDlNode(head.next);
+        printDLL(head);
 
         // Insertion of the Doubly Linked List
-        // head = insertBeforeHead(head, 10);
-        // printDLL(head);
-        // head = insertBeforeTail(head, 20);
-        // printDLL(head);
-        // head = insertBeforeKthNode(head, 30, 3);
-        // printDLL(head);
-        // insertBeforeNode(head.next, 40);
-        // printDLL(head);
+        head = insertBeforeHead(head, 10);
+        printDLL(head);
+        head = insertBeforeTail(head, 20);
+        printDLL(head);
+        head = insertBeforeKthNode(head, 30, 3);
+        printDLL(head);
+        insertBeforeNode(head.next, 40);
+        printDLL(head);
 
         head = reverseDL(head);
         printDLL(head);
